@@ -1,6 +1,6 @@
 ﻿var person = new Person
 {
-    Name = "Ryan" // required field
+    Name = "Ryan" // required field for compilation
 };
 
 #pragma warning disable SomethingNew
