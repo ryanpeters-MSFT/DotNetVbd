@@ -42,7 +42,7 @@
 - Hot reload improvements
 - Simplified Ordering (.Order(), .OrderDescending())
 - `required` keyword for properties
-- [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1)
+- [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1) - [Example](./FrozenSets/Program.cs)
 - keyed dependencies/services
 - primary constructors
 - collection expressions - shorthand for defining collections, such as arrays and list (also see spread element)
