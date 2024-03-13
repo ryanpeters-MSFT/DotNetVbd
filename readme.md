@@ -41,14 +41,14 @@
 - serialization improvments (JSON)
 - Hot reload improvements
 - Simplified Ordering (.Order(), .OrderDescending())
-- [Required] attribute for properties
-- Frozen list types
+- `required` keyword for properties
+- [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1)
 - keyed dependencies/services
 - primary constructors
 - collection expressions - shorthand for defining collections, such as arrays and list (also see spread element)
-- [Experimental] attribute
+- `[Experimental]` attribute
 - EF improvements (DateOnly and TimeOnly)
-- .net aspire - https://www.youtube.com/watch?v=DORZA_S7f9w
+- .NET Aspire - https://www.youtube.com/watch?v=DORZA_S7f9w
 
 ### AOT 
 - generates a single, self-contained, OS-specific executable

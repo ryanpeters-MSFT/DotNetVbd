@@ -8,7 +8,7 @@ If a `required` property is set on a class, that property must have a value set 
 - [Person.cs](./Person.cs)
 - [Program.cs](./Program.cs)
 
-# `[Experimental]` Attribute (.NET 8/C# 12)
+# `[Experimental]` Attribute (.NET 8, C# 12)
 
 When set on a type, method, enum, etc, indicates that the functionality is experimental and may change in the future. 
 
