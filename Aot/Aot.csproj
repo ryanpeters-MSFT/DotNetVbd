@@ -7,12 +7,12 @@
     <Nullable>enable</Nullable>
 
     <!-- AOT-specific -->
-    <!-- <OptimizationPreference>Size</OptimizationPreference> 
-    <PublishAot>true</PublishAot> -->
+    <OptimizationPreference>Size</OptimizationPreference> <!-- "Speed" -->
+    <PublishAot>true</PublishAot>
 
     <!-- comparison against a single=file, self-contained deployment -->
-    <PublishSingleFile>true</PublishSingleFile>
-		<SelfContained>true</SelfContained>
+    <!-- <PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>true</SelfContained> -->
   </PropertyGroup>
 
 </Project>
