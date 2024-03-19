@@ -15,15 +15,15 @@
 
 ## .NET 7 New Features
 - Consists mainly performance improvements
+- Enablement of publishing to containers - https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container
+- Regex improvements - https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-source-generators
+- Math interfaces - https://learn.microsoft.com/en-us/dotnet/standard/generics/math
+- Nanoseconds in datetime
+- Relection improvements (?)
+- App trimming - now enabled by default for console apps - https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/7.0/trim-all-assemblies
+- Memory caching improvements (?)
+- Improvements to opentelemetry
 - .PatchAsync() and .PatchAsJsonAsync()
-- regex improvements - https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-source-generators
-- math interfaces - https://learn.microsoft.com/en-us/dotnet/standard/generics/math
-- nanoseconds in datetime
-- relection improvements (?)
-- app trimming - now enabled by default for console apps - https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/7.0/trim-all-assemblies
-- memory caching improvements (?)
-- new improvements to opentelemetry
-- enablement of publishing to containers - https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container?pivots=dotnet-8-0
 
 ## ASP.NET 7
 - rate limiting - https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?preserve-view=true&view=aspnetcore-7.0
