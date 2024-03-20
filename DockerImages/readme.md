@@ -15,12 +15,5 @@
     - Choose Ubuntu Chiselled when you need a balance between a larger ecosystem, development-friendly features, and reduced image size.
     - Choose Alpine when minimalism, security, and faster build times are critical
 
-### Tags
-
-- **Latest (Debian 12 Bookworm)** - 217MB
-- **Alpine** - 107MB
-- **Ubuntu Jammy (22.04)** - 216MB
--- **Ubuntu Jammy (22.04 slim)** - ??
-
 ## Links
 - https://ubuntu.com/blog/combining-distroless-and-ubuntu-chiselled-containers
