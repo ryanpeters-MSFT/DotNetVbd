@@ -4,7 +4,7 @@ COPY . .
 
 RUN dotnet publish "DockerImages.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy AS base
+FROM mcr.microsoft.com/dotnet/runtime:8.0-jammy AS base
 WORKDIR /app
 COPY --from=build /app/publish .
 
