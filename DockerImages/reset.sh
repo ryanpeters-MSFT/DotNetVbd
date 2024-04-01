@@ -9,5 +9,5 @@ while IFS= read -r line; do
     image_id=$(echo $line | awk '{print $3}')
     
     # Remove the image
-    docker rmi -f $image_id
+    sudo docker rmi -f $image_id
 done <<< "$images"
