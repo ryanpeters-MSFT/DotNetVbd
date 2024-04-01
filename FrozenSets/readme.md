@@ -4,4 +4,6 @@ Similar to a read-only collection (e.g., `ReadOnlyColletion<T>`), provides addit
 
 Once a list is "frozen", changes are no longer reflected. Adding an item to the list will reflect no changes.
 
-[Benchmarks](https://steven-giesel.com/blogPost/34e0fd95-0b3f-40f2-ba2a-36d1d4eb5601)
+## Links
+
+- [Benchmarks](https://steven-giesel.com/blogPost/34e0fd95-0b3f-40f2-ba2a-36d1d4eb5601)
