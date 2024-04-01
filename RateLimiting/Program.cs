@@ -3,45 +3,59 @@ using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// add test client
+builder.Services.AddTransient<Client>();
+builder.Services.AddHttpClient<Client>();
+
 builder.Services.AddRateLimiter(_ =>
 {
     _.AddFixedWindowLimiter("fixed-limiter", options =>
     {
         options.PermitLimit = 3;
-        options.Window = TimeSpan.FromSeconds(10);
-        options.QueueLimit = 3;
-        options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
+        options.Window = TimeSpan.FromSeconds(5);
+        options.QueueLimit = 2;
+        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
     });
 
     _.AddSlidingWindowLimiter("sliding-limiter", options =>
     {
         options.PermitLimit = 3;
-        options.SegmentsPerWindow = 3;
-        options.QueueLimit = 3;
-        options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
+        options.SegmentsPerWindow = 2;
+        options.QueueLimit = 2;
+        options.Window = TimeSpan.FromSeconds(5);
+        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
     });
 
     _.AddConcurrencyLimiter("concurrent-limiter", options =>
     {
         options.PermitLimit = 3;
-        options.QueueLimit = 3;
-    })
+        options.QueueLimit = 2;
+        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+    });
 });
 
 var app = builder.Build();
 
-int fixedRequests = 0, slidingRequests = 0;
+app.MapGet("/fixed/{id}", (int id) => Results.Ok(id)).RequireRateLimiting("fixed-limiter");
 
-app.MapGet("/fixed", () => Results.Ok(++fixedRequests)).RequireRateLimiting("fixed-limiter");
+app.MapGet("/sliding/{id}", (int id) => Results.Ok(id)).RequireRateLimiting("sliding-limiter");
 
-app.MapGet("/sliding", () => Results.Ok(++slidingRequests)).RequireRateLimiting("sliding-limiter");
-
-var options = new RateLimiterOptions
+app.MapGet("/concurrent/{id}", (int id) =>
 {
-    GlobalLimiter = PartitionedRateLimiter.Create(),
-    RejectionStatusCode = 429 // rate limited
-}
+    Thread.Sleep(2000);
 
-app.UseRateLimiter(options);
+    return Results.Ok(id);
+}).RequireRateLimiting("concurrent-limiter");
 
-app.Run();
+app.UseRateLimiter();
+app.Start();
+
+var url = app.Urls.First();
+
+Thread.Sleep(3000);
+
+var client = app.Services.GetService<Client>();
+
+await client.ConcurrentTestAsync(url, "fixed", 10);
+//await client.ConcurrentTestAsync(url, "sliding", 10);
+//await client.ConcurrentTestAsync(url, "concurrent", 10);
