@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# Get a list of all docker images
-images=$(sudo docker images --format "{{.Repository}}" | grep "dockertest")
+# Get all docker images
+images=$(sudo docker images -a | grep -i dockertest)
 
-# Loop through each image
-for image in $images
-do
-    echo "Deleting image: $image"
-
-    # Pull the latest version of the image
-    sudo docker image rm $image -f
-done
-
-echo "Deletion complete."
+# Loop over all lines
+while IFS= read -r line; do
+    # Extract the image ID
+    image_id=$(echo $line | awk '{print $3}')
+    
+    # Remove the image
+    docker rmi -f $image_id
+done <<< "$images"
