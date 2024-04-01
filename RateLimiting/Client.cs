@@ -11,7 +11,7 @@ public class Client(HttpClient httpClient)
             requestTasks[i] = MakeRequestAsync($"{url}/{segment}/{i}");
         }
 
-        Task.WaitAll(requestTasks);
+        await Task.WhenAll(requestTasks);
 
         Console.WriteLine();
     }
