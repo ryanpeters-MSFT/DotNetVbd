@@ -15,22 +15,22 @@
 
 ## .NET 7 New Features
 - Consists mainly performance improvements
-- Enablement of publishing to containers - https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container
-- Regex improvements - https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-source-generators
-- Math interfaces - https://learn.microsoft.com/en-us/dotnet/standard/generics/math
+- [Enablement of publishing to containers](https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container) ([Examples](./DockerPublish/))
+- [Regex improvements](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-source-generators)
+- [Math interfaces](https://learn.microsoft.com/en-us/dotnet/standard/generics/math) ([Examples](./MathInterfaces/))
 - Nanoseconds in datetime
-- Relection improvements (?)
-- App trimming - now enabled by default for console apps - https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/7.0/trim-all-assemblies
-- Memory caching improvements (?)
+- Relection improvements
+- App trimming is [now enabled by default for console apps](https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/7.0/trim-all-assemblies)
+- Memory caching improvements
 - Improvements to opentelemetry
 - .PatchAsync() and .PatchAsJsonAsync()
 
 ## ASP.NET 7
-- rate limiting - https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?preserve-view=true&view=aspnetcore-7.0
-- no longer need to explicitly use [FromServices], can now infer from services implicitly
-- minimal api filters
-- binding query string values from arrays using primitive types
-- improvements to Results.Stream (to access underlying HTTP response stream)
+- [API Rate Limiting](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?preserve-view=true&view=aspnetcore-7.0) ([Examples](./RateLimiting/))
+- No longer need to explicitly use [FromServices] - can now infer from services implicitly
+- [Minimal API filters](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/min-api-filters)
+- Binding query string values from arrays using primitive types
+- Improvements to Results.Stream (to access underlying HTTP response stream)
 
 ## .NET 8 New Features
 - Even more performance improvements
@@ -39,10 +39,10 @@
 - GC improvements
 - serialization improvments (JSON)
 - Hot reload improvements
-- Simplified Ordering (.Order(), .OrderDescending())
-- `required` keyword for properties
-- [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1) - [Example](./FrozenSets/Program.cs)
-- keyed dependencies/services
+- Simplified list ordering  using `.Order()` and `.OrderDescending()` for sortable types (replaces `.OrderBy(x => x)`)
+- `required` keyword for properties ([Example](./RequiredAttributes/Person.cs))
+- [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1) ([Example](./FrozenSets/Program.cs))
+- Keyed dependencies/services
 - primary constructors
 - collection expressions - shorthand for defining collections, such as arrays and list (also see spread element)
 - `[Experimental]` attribute
