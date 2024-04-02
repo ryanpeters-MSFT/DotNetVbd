@@ -43,13 +43,15 @@
 - `required` keyword for properties ([Example](./RequiredAttributes/Person.cs))
 - [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1) ([Example](./FrozenSets/))
 - Keyed dependencies/services
-- primary constructors
+- Primary constructors ([Example](./RateLimiting/Client.cs))
 - collection expressions - shorthand for defining collections, such as arrays and list (also see spread element)
-- `[Experimental]` attribute
+- `[Experimental]` attribute ([Example](./RequiredAttributes/Person.cs))
 - EF improvements (DateOnly and TimeOnly)
 - .NET Aspire - https://www.youtube.com/watch?v=DORZA_S7f9w
 
 ## AOT (.NET 7 and .NET 8)
+
+- [Examples](./Aot/)
 - "Ahead of time" compilation
 - Generates a single, self-contained, OS-specific executable to create a native binary
 - The result is faster startup times and smaller footprint, and no framework is needed
@@ -65,8 +67,7 @@
 
 ## ASPIRE
 
-[Overview](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
-
+- [Overview](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
 - **Cloud-Ready Stack**: .NET Aspire is an opinionated, cloud-ready stack for building observable, production-ready, distributed applications. It's designed to improve the experience of building .NET cloud-native apps.
 - **Orchestration**: .NET Aspire provides features for running and connecting multi-project applications and their dependencies for local development environments. It simplifies the management of your cloud-native app’s configuration and interconnections.
 - **Components**: .NET Aspire components are NuGet packages for commonly used services, such as Redis or Postgres, with standardized interfaces ensuring they connect consistently and seamlessly with your app.
