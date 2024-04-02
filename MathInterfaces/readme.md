@@ -11,6 +11,29 @@ static T Add<T>(T left, T right) where T : INumber<T>
 }
 ```
 
+In contrast, in order to write this in earlier versions of .NET, you would have two options, and both options suffer from poor performance. First, you can use the `dynamic` keyword to handle the addition:
+
+```csharp
+static dynamic Add(dynamic left, dynamic right)
+{
+    return left + right;
+}
+```
+
+The second option makes use of reflection to determine the addition operator on the type and invoke the operation:
+
+```csharp
+static T Add<T>(T left, T right)
+{
+    // Get the addition operator for the type
+    var method = typeof(T)
+        .GetMethods(BindingFlags.Static | BindingFlags.NonPublic)
+        .FirstOrDefault(m => m.Name.Contains("op_Addition"));
+    
+    return (T)method.Invoke(null, new object[] { left, right });
+}
+```
+
 ## Links
 
 - [.NET 7 Preview 5 – Generic Math](https://devblogs.microsoft.com/dotnet/dotnet-7-generic-math/)
