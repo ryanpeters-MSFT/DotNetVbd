@@ -30,17 +30,17 @@
 
 ## ASP.NET 7
 - [API Rate Limiting](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?preserve-view=true&view=aspnetcore-7.0) ([Examples](./RateLimiting/))
-- No longer need to explicitly use [FromServices] - can now infer from services implicitly
-- [Minimal API filters](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/min-api-filters)
+- [No longer need to explicitly use [FromServices]](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-2/) ([Examples](./WebApi/Controllers/ClientController.cs))
+- [Minimal API filters](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/min-api-filters) ([Examples](./WebApi/EndpointFilters/EvenNumberFilter.cs))
 - Binding query string values from arrays using primitive types
 - Improvements to Results.Stream (to access underlying HTTP response stream)
 
 ## .NET 8 New Features
 - Even more performance improvements
-- AOT improvements (?) - reduced memory footprint, improved startup time, better efficiencyt (100mb reduced to 10mb, e.g.)
+- AOT improvements - reduced memory footprint, improved startup time, better efficiencyt (100mb reduced to 10mb, e.g.)
 - SHA-3 support
 - GC improvements
-- serialization improvments (JSON)
+- Serialization improvments (JSON)
 - Hot reload improvements
 - Simplified list ordering  using `.Order()` and `.OrderDescending()` for sortable types (replaces `.OrderBy(x => x)`)
 - `required` keyword for properties ([Example](./RequiredAttributes/Person.cs))

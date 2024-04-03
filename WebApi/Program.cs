@@ -1,9 +1,18 @@
 using EndpointFilters;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<IClientRepository, InMemoryClientRepository>();
 builder.Services.AddControllers();
+
+builder.Services.Configure<ApiBehaviorOptions>(options => 
+{
+    // optional paramater to disable implicit [FromServices] DI injection (defaults to "false")
+    options.DisableImplicitFromServicesParameters = false;
+});
 
 var app = builder.Build();
 
