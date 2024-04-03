@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 app.MapGet("/addsmallnumbers", (int x, int y) =>
@@ -29,5 +31,7 @@ app.MapGet("/addsmallnumbers", (int x, int y) =>
     return result;
 
 }).AddEndpointFilter<EvenNumberFilter>();
+
+app.MapControllers();
 
 app.Run();
