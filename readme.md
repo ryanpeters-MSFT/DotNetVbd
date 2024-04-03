@@ -1,17 +1,20 @@
  # .NET 7/8/9-pre Highlights
 - *TBD*
 
-## Loose Notes
+## Links:
 
-### Links:
-- https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7
-- https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview
-- https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0
-- https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0
-- https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0
-- https://github.com/dotnet/docs/blob/main/docs/core/whats-new/dotnet-9/overview.md
-- https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x/?view=aspnetcore-8.0
-- https://learn.microsoft.com/en-us/aspnet/core/migration/60-70?view=aspnetcore-8.0&tabs=visual-studio
+- **What's New**
+    - [.NET 7](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7)
+    - [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview)
+    - [ASP.NET 7](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0)
+    - [ASP.NET 8](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0)
+    - [.NET 9 (Preview)](https://github.com/dotnet/docs/blob/main/docs/core/whats-new/dotnet-9/overview.md)
+- **Breaking Changes**
+    - [.NET 7](https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0)
+    - [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0)
+- **Upgrading and Migrating**
+    - [Upgrade from ASP.NET Framework to ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x/)
+    - [Migrate from ASP.NET Core 6.0 to 7.0](https://learn.microsoft.com/en-us/aspnet/core/migration/60-70)
 
 ## .NET 7 New Features
 - Consists mainly performance improvements
