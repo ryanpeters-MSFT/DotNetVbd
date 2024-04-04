@@ -37,6 +37,7 @@
 
 ## .NET 8 New Features
 - Even more performance improvements
+- [Service Discovery](https://learn.microsoft.com/en-us/dotnet/core/extensions/service-discovery) ([Examples](./ServiceDiscovery/))
 - AOT improvements - reduced memory footprint, improved startup time, better efficiencyt (100mb reduced to 10mb, e.g.)
 - SHA-3 support
 - GC improvements
@@ -78,6 +79,11 @@
 - **Resilience, Service Discovery, Telemetry, and Health Checks**: .NET Aspire includes a curated set of components enhanced for cloud-native by including service discovery, telemetry, resilience, and health checks by default.
 
 The problem .NET Aspire is trying to solve is the complexity of building cloud-native apps. Developers are often pulled away from their business logic to deal with the complexity of the cloud. .NET Aspire aims to simplify this complexity, making it easier for developers to build and manage cloud-native applications.
+
+### Links
+
+- [Service Defaults](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/service-defaults)
+- [Service Discovery](https://learn.microsoft.com/en-us/dotnet/aspire/service-discovery/overview)
 
 ***TODO***
 - include link to repo and demo apps
