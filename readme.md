@@ -87,7 +87,6 @@ The problem .NET Aspire is trying to solve is the complexity of building cloud-n
 - [Service Discovery](https://learn.microsoft.com/en-us/dotnet/aspire/service-discovery/overview)
 
 ***TODO***
-- include link to repo and demo apps
 - move this readme to app
 
 ## Docker
@@ -101,3 +100,4 @@ The problem .NET Aspire is trying to solve is the complexity of building cloud-n
 
 ### Links
 - [List of supported runtime tags](https://hub.docker.com/_/microsoft-dotnet-runtime/)
+- [5 new MVC features in .NET 7](https://andrewlock.net/5-new-mvc-features-in-dotnet-7/)
