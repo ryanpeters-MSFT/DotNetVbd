@@ -32,6 +32,7 @@
 - [API Rate Limiting](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?preserve-view=true&view=aspnetcore-7.0) ([Examples](./RateLimiting/))
 - [No longer need to explicitly use [FromServices]](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-2/) ([Examples](./WebApi/Controllers/ClientController.cs))
 - [Minimal API filters](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/min-api-filters) ([Examples](./WebApi/EndpointFilters/EvenNumberFilter.cs))
+- [IParsable model binding](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-7.0) ([Example](./WebApi/Models/Vin.cs))
 - Binding query string values from arrays using primitive types
 - Improvements to Results.Stream (to access underlying HTTP response stream)
 

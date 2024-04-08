@@ -65,3 +65,12 @@ builder.Services.AddSingleton<IRepository, SecondRepository>();
 If multiple implementations of the type are defined, by default, if I ask for an instance of type `IRepository`, I would receive an instance of the last type registered against `IServiceCollection`. Meaning, I would get an instance of `SecondRepository` because it was the last one registered. 
 
 Another approach is to ask for ALL instances, by requesting an instance of `IEnumerable<IRepository>` and iterate through the collection to find the instance needed. 
+
+## Model Binding with `IParsable<T>.TryParse`
+
+Leveraging the new `IParsable<T>` interface, in addition to providing constructs to parse between different types, can be used as part of the model binder to create a model type from a string, ultimately invoking the `IParsable<T>.TryParse` static method. 
+
+In this example, a `VinController` is exposes a single `Parse` endpoint that accepts a VIN as a string and returns a JSON result with the parsed segments. Because the `Vin` type implements `IParsable<Vin>`, and thus handles all of the parsing to create the `Vin` object, the controller endpoint has no actual parsing logic, and instead returns the (parsed) `Vin` request object as the result. 
+
+### Links
+- [.NET 7.0 IParsable<TSelf> interface](https://blog.ndepend.com/the-new-net-7-0-iparsable-interface/)
