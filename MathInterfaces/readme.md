@@ -38,3 +38,4 @@ static T Add<T>(T left, T right)
 
 - [.NET 7 Preview 5 – Generic Math](https://devblogs.microsoft.com/dotnet/dotnet-7-generic-math/)
 - [Generic Math](https://learn.microsoft.com/en-us/dotnet/standard/generics/math)
+- [INumber<TSelf> Interface](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.inumber-1?view=net-8.0)
