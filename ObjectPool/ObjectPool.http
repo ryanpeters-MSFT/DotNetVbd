@@ -1,6 +1,0 @@
-@ObjectPool_HostAddress = http://localhost:5188
-
-GET {{ObjectPool_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
