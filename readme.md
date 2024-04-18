@@ -41,6 +41,7 @@
 - [Service Discovery](https://learn.microsoft.com/en-us/dotnet/core/extensions/service-discovery) ([Examples](./ServiceDiscovery/))
 - AOT improvements - reduced memory footprint, improved startup time, better efficiencyt (100mb reduced to 10mb, e.g.)
 - SHA-3 support
+- [Object pooling support](https://learn.microsoft.com/en-us/aspnet/core/performance/objectpool) ([Example](./ObjectPool/))
 - GC improvements
 - Serialization improvments (JSON)
 - Hot reload improvements
