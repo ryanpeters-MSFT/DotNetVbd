@@ -8,6 +8,7 @@
 1. **Performance Boosts**: .NET 7 introduces enhancements across the board. The runtime now boasts improved performance, garbage collection efficiency, and optimizations in core and extension libraries.
 2. **Globalization Mode for Mobile Apps**: A new globalization mode caters specifically to mobile applications, ensuring smoother internationalization and localization.
 3. **Source Generators**: .NET 7 introduces source generators for COM interop and configuration binding, streamlining code generation and improving developer productivity.
+4. **Native AOT**: .NET Core now supports Native Ahead-of-Time (AOT) compilation for console and worker applications.
 
 ### .NET 8 Highlights:
 1. **Long-Term Support (LTS)**: .NET 8 continues the tradition of LTS releases, promising three years of support. It's a reliable choice for long-lived applications.
@@ -36,19 +37,17 @@
     - [Upgrade from ASP.NET Framework to ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x/)
     - [Migrate from ASP.NET Core 6.0 to 7.0](https://learn.microsoft.com/en-us/aspnet/core/migration/60-70)
 
-## .NET 7 New Features
-- Consists mainly performance improvements
+## .NET 7 and ASP.NET 7 New Features
+- [Consists mainly performance improvements](https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7)
 - [Enablement of publishing to containers](https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container) ([Examples](./DockerPublish/))
 - [Regex improvements](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-source-generators)
 - [Math interfaces](https://learn.microsoft.com/en-us/dotnet/standard/generics/math) ([Examples](./MathInterfaces/))
-- Nanoseconds in datetime
-- Relection improvements
+- [Nanoseconds in `DateTime`](https://learn.microsoft.com/en-us/dotnet/api/system.datetime.nanosecond?view=net-7.0)
+- [Simplified list ordering using `.Order()` and `.OrderDescending()`](https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.orderdescending?view=net-7.0) for sortable types (replaces `.OrderBy(x => x)`)
+- [Relection improvements](https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7/#reflection)
 - App trimming is [now enabled by default for console apps](https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/7.0/trim-all-assemblies)
 - Memory caching improvements
-- Improvements to opentelemetry
-- .PatchAsync() and .PatchAsJsonAsync()
-
-## ASP.NET 7
+- [.PatchAsJsonAsync() support](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.json.httpclientjsonextensions.patchasjsonasync?view=net-7.0)
 - [API Rate Limiting](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?preserve-view=true&view=aspnetcore-7.0) ([Examples](./RateLimiting/))
 - [No longer need to explicitly use [FromServices]](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-2/) ([Examples](./WebApi/Controllers/ClientController.cs))
 - [Minimal API filters](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/min-api-filters) ([Examples](./WebApi/EndpointFilters/EvenNumberFilter.cs))
@@ -56,46 +55,22 @@
 - Binding query string values from arrays using primitive types
 - Improvements to Results.Stream (to access underlying HTTP response stream)
 
-## .NET 8 New Features
+## .NET 8 and ASP.NET 8 New Features
 - Even more performance improvements
 - [Service Discovery](https://learn.microsoft.com/en-us/dotnet/core/extensions/service-discovery) ([Examples](./ServiceDiscovery/))
-- AOT improvements - reduced memory footprint, improved startup time, better efficiencyt (100mb reduced to 10mb, e.g.)
-- SHA-3 support
-- [Object pooling support](https://learn.microsoft.com/en-us/aspnet/core/performance/objectpool) ([Example](./ObjectPool/))
+- [AOT improvements](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/#native-aot) - reduced memory footprint, improved startup time, better efficiencyt (100mb reduced to 10mb, e.g.)
+- [SHA-3 support](https://learn.microsoft.com/en-us/dotnet/standard/security/cross-platform-cryptography#sha-3)
+- [Object pooling support for `IResettable`](https://learn.microsoft.com/en-us/aspnet/core/performance/objectpool) ([Example](./ObjectPool/))
 - GC improvements
-- Serialization improvments (JSON)
-- Hot reload improvements
-- Simplified list ordering  using `.Order()` and `.OrderDescending()` for sortable types (replaces `.OrderBy(x => x)`)
+- [Serialization improvments (JSON)](https://devblogs.microsoft.com/dotnet/system-text-json-in-dotnet-8/)
+- [Hot reload improvements](https://devblogs.microsoft.com/visualstudio/speed-up-your-dotnet-and-cplusplus-development-with-hot-reload-in-visual-studio-2022/)
 - `required` keyword for properties ([Example](./RequiredAttributes/Person.cs))
 - [Frozen list types](https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen.frozenset-1) ([Example](./FrozenSets/))
-- Keyed DI/services ([Example](./WebApi/Controllers/AccountController.cs))
-- Primary constructors ([Example](./RateLimiting/Client.cs))
-- collection expressions - shorthand for defining collections, such as arrays and list (also see spread element)
-- `[Experimental]` attribute ([Example](./RequiredAttributes/Person.cs))
-- EF improvements (DateOnly and TimeOnly)
-- .NET Aspire - https://www.youtube.com/watch?v=DORZA_S7f9w
-
-## AOT (.NET 7 and .NET 8)
-
-- [Examples](./Aot/)
-- "Ahead of time" compilation
-- Generates a single, self-contained, OS-specific executable to create a native binary
-- The result is faster startup times and smaller footprint, and no framework is needed
-- When compared to "single file", which includes all framework-supporting code within it, is usually MUCH larger than a AOT deployment. This is because the former is still leveraging the .NET runtime (encapsulated inside a single executable), whereas the AOT binary is OS-native.
-- No JIT - all optimizations are created "ahead of time"
-- The AOT optimization process can be based on "speed" or "size", instead of the default "blended" approach
-- Trimming is used, but [additional settings can be set](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0)
-- Debugging options:
-    - PDB symbols can be produced
-    - managed debuggers won't work, but the OS-native debugger can
-- P/invoke calls are lazy-loaded by default for better compatibility
-
-
-
-
-
-***TODO***
-- move this readme to app
+- [Keyed DI/services](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0#keyed-services) ([Example](./WebApi/Controllers/AccountController.cs))
+- [Primary constructors](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/primary-constructors) ([Example](./RateLimiting/Client.cs))
+- [Collection expressions](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/collection-expressions) - shorthand for defining collections, such as arrays and list (also see spread element)
+- [`[Experimental]` attribute](https://www.c-sharpcorner.com/article/the-experimental-attribute-in-net-8-and-c-sharp-12/) ([Example](./RequiredAttributes/Person.cs))
+- [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) ([Video](https://www.youtube.com/watch?v=DORZA_S7f9w))
 
 ## Docker
 - **Support for Chiseled Containers**: .NET 8 has started shipping Docker images built directly on chiseled containers. These are stripped-down versions of Ubuntu, where only the essential packages for running your application are included. This results in smaller images and a reduced attack surface.
@@ -106,7 +81,10 @@
 - **Debian 12 Images**: The container images now use Debian 12 (Bookworm) when targeting the "latest" tag for the runtime. Debian is the default Linux distro in the .NET container images.
 - **Build Multi-Platform Container Images**: .NET 8 introduces a new pattern that enables you to mix and match architectures with the .NET images you build.
 
-### Links
+## Links
+- [Performance Improvements in .NET 7](https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7/)
 - [Performance Improvements in .NET 8](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)
+- [Performance improvements in ASP.NET Core 7](https://devblogs.microsoft.com/dotnet/performance-improvements-in-aspnet-core-7/)
+- [Performance improvements in ASP.NET Core 8](https://devblogs.microsoft.com/dotnet/performance-improvements-in-aspnet-core-8/)
 - [List of supported runtime tags](https://hub.docker.com/_/microsoft-dotnet-runtime/)
 - [5 new MVC features in .NET 7](https://andrewlock.net/5-new-mvc-features-in-dotnet-7/)

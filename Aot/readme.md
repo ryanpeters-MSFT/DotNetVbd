@@ -16,6 +16,17 @@ Ahead-of-Time (AOT) compilation in .NET 7+ is a technique where code is compiled
 
 During the publishing phase, the AOT compiler processes the Intermediate Language (IL) code and generates native machine code directly from it. Unlike Just-In-Time (JIT) compilation, which occurs at runtime, AOT eliminates the need for JIT overhead during execution. The resulting application is self-contained, meaning it includes all necessary dependencies and doesn't rely on the presence of the .NET runtime on the target machine. AOT offers benefits such as faster startup times, smaller memory footprint, and runtime independence. However, it has limitations related to compatibility with certain libraries and is most suitable for scenarios with many deployed instances.
 
+## Key Points
+
+- The result is faster startup times and smaller footprint, and no framework is needed
+- When compared to "single file", which includes all framework-supporting code within it, is usually MUCH larger than a AOT deployment. This is because the former is still leveraging the .NET runtime (encapsulated inside a single executable), whereas the AOT binary is OS-native.
+- No JIT - all optimizations are created "ahead of time"
+- The AOT optimization process can be based on "speed" or "size", instead of the default "blended" approach
+- Trimming is used, but [additional settings can be set](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0)
+- Debugging options:
+    - PDB symbols can be produced
+    - managed debuggers won't work, but the OS-native debugger can
+- P/invoke calls are lazy-loaded by default for better compatibility
 ## Support
 
 .NET 7 supports only Console applications, while .NET 8 supports a [subset of ASP.NET functionality](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot?view=aspnetcore-8.0).
