@@ -100,5 +100,6 @@ The problem .NET Aspire is trying to solve is the complexity of building cloud-n
 - **Build Multi-Platform Container Images**: .NET 8 introduces a new pattern that enables you to mix and match architectures with the .NET images you build.
 
 ### Links
+- [Performance Improvements in .NET 8](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)
 - [List of supported runtime tags](https://hub.docker.com/_/microsoft-dotnet-runtime/)
 - [5 new MVC features in .NET 7](https://andrewlock.net/5-new-mvc-features-in-dotnet-7/)

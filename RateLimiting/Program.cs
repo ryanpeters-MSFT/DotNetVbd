@@ -3,6 +3,8 @@ using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+
 // add test client
 builder.Services.AddTransient<Client>();
 builder.Services.AddHttpClient<Client>();
@@ -48,6 +50,7 @@ app.MapGet("/concurrent/{id}", (int id) =>
 }).RequireRateLimiting("concurrent-limiter");
 
 app.UseRateLimiter();
+app.MapControllers();//.RequireRateLimiting("fixed-limiter");
 app.Start();
 
 var url = app.Urls.First();
@@ -56,6 +59,10 @@ Thread.Sleep(3000);
 
 var client = app.Services.GetService<Client>();
 
+// testing minimal APIs
 await client.ConcurrentTestAsync(url, "fixed", 10);
 //await client.ConcurrentTestAsync(url, "sliding", 10);
 //await client.ConcurrentTestAsync(url, "concurrent", 10);
+
+// testing v2 (controller-based endpoints)
+//await client.ConcurrentTestAsync(url, "v2/fixed", 10);
