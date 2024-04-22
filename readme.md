@@ -1,4 +1,4 @@
- # .NET 7/8/9-pre Highlights
+ # .NET 7 and .NET 8 New Features
 
 .NET 7 and .NET 8 represent the next yearly releases after .NET 6. .NET 6 was released on November 2021 and was an LTS release, meaning it had a 3-year support window. The releases of .NET 7 and .NET 8 represent STS and LTS releases, respectively, meaning that .NET 8 also carries with it a 3-year support window, ending in November of 2026.
 
