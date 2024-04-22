@@ -1,8 +1,8 @@
 namespace Repositories;
 
-public class MssqlAccountRepository : IAccountRepository
+public class MssqlAccountRepository : IDataRepository
 {
-    public string GetAccountName(int id)
+    public string GetBackendName()
     {
         return "Microsoft";
     }

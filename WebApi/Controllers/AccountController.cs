@@ -7,9 +7,9 @@ public class AccountController : ControllerBase
 {
     [HttpGet]
     [Route("{id}")]
-    public IActionResult GetAccount(int id, [FromKeyedServices("psql")] IAccountRepository accountRepository)
+    public IActionResult GetAccount(int id, [FromKeyedServices("psql")] IDataRepository repository)
     {
-        var name = accountRepository.GetAccountName(id);
+        var name = repository.GetBackendName();
 
         return Ok(name);
     }

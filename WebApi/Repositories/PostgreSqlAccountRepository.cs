@@ -1,9 +1,9 @@
 namespace Repositories;
 
-public class PostgreSqlAccountRepository : IAccountRepository
+public class PostgreSqlAccountRepository : IDataRepository
 {
-    public string GetAccountName(int id)
+    public string GetBackendName()
     {
-        return "Apple";
+        return "PostgreSQL";
     }
 }

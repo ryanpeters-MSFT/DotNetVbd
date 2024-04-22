@@ -6,8 +6,8 @@ using Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IClientRepository, InMemoryClientRepository>();
-builder.Services.AddKeyedSingleton<IAccountRepository, MssqlAccountRepository>("mssql");
-builder.Services.AddKeyedSingleton<IAccountRepository, PostgreSqlAccountRepository>("psql");
+builder.Services.AddKeyedSingleton<IDataRepository, MssqlAccountRepository>("mssql");
+builder.Services.AddKeyedSingleton<IDataRepository, PostgreSqlAccountRepository>("psql");
 
 builder.Services.AddControllers();
 
