@@ -1,0 +1,59 @@
+{
+  "resources": {
+    "storage": {
+      "type": "azure.storage.v0"
+    },
+    "blobs": {
+      "type": "azure.storage.blob.v0",
+      "parent": "storage"
+    },
+    "vault": {
+      "type": "azure.keyvault.v0"
+    },
+    "storagesecureapi": {
+      "type": "project.v0",
+      "path": "../Storage.SecureApi/Storage.SecureApi.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "ConnectionStrings__vault": "{vault.connectionString}",
+        "ConnectionStrings__blobs": "{blobs.connectionString}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    },
+    "storageapi": {
+      "type": "project.v0",
+      "path": "../Storage.Api/Storage.Api.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "ConnectionStrings__vault": "{vault.connectionString}",
+        "services__storagesecureapi__0": "{storagesecureapi.bindings.http.url}",
+        "services__storagesecureapi__1": "{storagesecureapi.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    }
+  }
+}

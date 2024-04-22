@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var forecasts = ViewBag.Forecasts as ICollection<WeatherForecast>;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+    @foreach (var forecast in forecasts)
+    {
+        <div>@forecast.Summary - @forecast.TemperatureF</div>
+    }
+</div>
