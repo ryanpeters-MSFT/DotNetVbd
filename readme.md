@@ -1,5 +1,25 @@
  # .NET 7/8/9-pre Highlights
-- *TBD*
+
+.NET 7 and .NET 8 represent the next yearly releases after .NET 6. .NET 6 was released on November 2021 and was an LTS release, meaning it had a 3-year support window. The releases of .NET 7 and .NET 8 represent STS and LTS releases, respectively, meaning that .NET 8 also carries with it a 3-year support window, ending in November of 2026.
+
+![.NET release cycle](./.images/release-schedule-dark.svg)
+
+### .NET 7 Highlights:
+1. **Performance Boosts**: .NET 7 introduces enhancements across the board. The runtime now boasts improved performance, garbage collection efficiency, and optimizations in core and extension libraries.
+2. **Globalization Mode for Mobile Apps**: A new globalization mode caters specifically to mobile applications, ensuring smoother internationalization and localization.
+3. **Source Generators**: .NET 7 introduces source generators for COM interop and configuration binding, streamlining code generation and improving developer productivity.
+
+### .NET 8 Highlights:
+1. **Long-Term Support (LTS)**: .NET 8 continues the tradition of LTS releases, promising three years of support. It's a reliable choice for long-lived applications.
+2. **C# 12**: Shipped alongside .NET 8, C# 12 brings language enhancements and features that enhance expressiveness and readability in your codebase.
+3. **Security and Hardware Support**: .NET 8 introduced support for the SHA-3 hash algorithms, including SHAKE-128 and SHAKE-256. SHA-3 support is currently supported on Windows 11 build 25324 or later, and Linux with OpenSSL 1.1.1 or later.
+4. **.NET Aspire**: This opinionated, cloud-ready stack simplifies building observable, production-ready, distributed applications. It's available in preview for .NET 8.
+5. **ASP.NET Core 8.0 Enhancements**:
+    - **Blazor**: Improvements in Blazor, SignalR, and minimal APIs enhance web development.
+    - **Native AOT**: ASP.NET Core now supports Native Ahead-of-Time (AOT) compilation.
+    - **Authentication and Authorization**: Enhanced features for secure user authentication and authorization.
+6. **EF Core 8**: Entity Framework Core gains improvements in complex type objects, JSON column mapping, raw SQL queries, and more. Plus, a new HierarchyId type is introduced.
+7. **Windows Forms and WPF**: Both Windows Forms and Windows Presentation Foundation (WPF) receive updates, including better data binding, high DPI support, and hardware acceleration for WPF.
 
 ## Links:
 
@@ -71,21 +91,8 @@
 - P/invoke calls are lazy-loaded by default for better compatibility
 
 
-## ASPIRE
 
-- [Overview](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
-- **Cloud-Ready Stack**: .NET Aspire is an opinionated, cloud-ready stack for building observable, production-ready, distributed applications. It's designed to improve the experience of building .NET cloud-native apps.
-- **Orchestration**: .NET Aspire provides features for running and connecting multi-project applications and their dependencies for local development environments. It simplifies the management of your cloud-native app’s configuration and interconnections.
-- **Components**: .NET Aspire components are NuGet packages for commonly used services, such as Redis or Postgres, with standardized interfaces ensuring they connect consistently and seamlessly with your app.
-- **Tooling**: .NET Aspire comes with project templates and tooling experiences for Visual Studio and the dotnet CLI to help you create and interact with .NET Aspire apps.
-- **Resilience, Service Discovery, Telemetry, and Health Checks**: .NET Aspire includes a curated set of components enhanced for cloud-native by including service discovery, telemetry, resilience, and health checks by default.
 
-The problem .NET Aspire is trying to solve is the complexity of building cloud-native apps. Developers are often pulled away from their business logic to deal with the complexity of the cloud. .NET Aspire aims to simplify this complexity, making it easier for developers to build and manage cloud-native applications.
-
-### Links
-
-- [Service Defaults](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/service-defaults)
-- [Service Discovery](https://learn.microsoft.com/en-us/dotnet/aspire/service-discovery/overview)
 
 ***TODO***
 - move this readme to app

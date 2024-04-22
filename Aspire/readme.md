@@ -2,6 +2,10 @@
 
 **.NET Aspire** is an opinionated stack specifically crafted for building **resilient, observable, and configurable cloud-native applications** using **.NET**. It aims to address the complexities developers face when building cloud apps, allowing them to focus more on their business logic and less on cloud intricacies. By providing a curated set of components enhanced for cloud-native scenarios, .NET Aspire streamlines the development process.
 
+## Microservice Orchestration
+
+In .NET Aspire, orchestration primarily focuses on enhancing the local development experience by simplifying the management of your cloud-native app's configuration and interconnections. It's important to note that .NET Aspire's orchestration is not intended to replace the robust systems used in production environments, such as Kubernetes. Instead, it provides a set of abstractions that streamline the setup of service discovery, environment variables, and container configurations, eliminating the need to deal with low-level implementation details. These abstractions ensure a consistent setup pattern across apps with numerous components and services, making it easier to manage complex applications during the development phase.
+
 ## Key Features and Components
 
 The stack includes several essential components:
@@ -34,8 +38,13 @@ In summary, .NET Aspire simplifies the cloud-native journey for .NET developers,
 
 ### [AspireDemo](./AspireDemo/)
 
-This example 
+This simple example demonstrates a simple example of a MVC application communicating with a Web API backend. 
 
 ### [AspireDemoStorage](./AspireDemoStorage/) - 
 
 TBD
+
+## Links
+
+- [Service Defaults](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/service-defaults)
+- [Service Discovery](https://learn.microsoft.com/en-us/dotnet/aspire/service-discovery/overview)
