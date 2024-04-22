@@ -22,7 +22,9 @@ During the publishing phase, the AOT compiler processes the Intermediate Languag
 
 ## Size Comparisons
 
-`Console.WriteLine("Hello, World!");`
+```csharp
+Console.WriteLine("Hello, World!");
+```
 
 | Type | Output Size (MB) |
 | - | - |
